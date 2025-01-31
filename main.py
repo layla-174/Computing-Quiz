@@ -3,7 +3,8 @@ print("Welcome to the TWICE quiz!!")
 print("Answer questions correctly to get points. Your score will be shown at the end")
 score = 0
 
-with open ('questions.txt' , 'r') as file:
+code = [
+with open ("questions.txt" , 'r') as file:
     questions = file.readlines()
 
 random_line_number = randint(0, len(questions) - 1)
@@ -20,4 +21,6 @@ if answer+"\n" in questions:
 else:
     print("sorry, wrong answer..")
 
-print(f"your score is now: {score}")
+print(f"your total score is: {score}") ]
+
+
