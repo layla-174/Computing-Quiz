@@ -3,7 +3,6 @@ print("Welcome to the TWICE quiz!!")
 print("Answer questions correctly to get points. Your score will be shown at the end")
 score = 0
 
-code = [
 with open ("questions.txt" , 'r') as file:
     questions = file.readlines()
 
@@ -21,6 +20,4 @@ if answer+"\n" in questions:
 else:
     print("sorry, wrong answer..")
 
-print(f"your total score is: {score}") ]
-
-
+print(f"your total score is: {score}") 
