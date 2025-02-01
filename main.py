@@ -3,8 +3,9 @@ print("Welcome to the TWICE quiz!!")
 print("Answer questions correctly to get points. Your score will be shown at the end")
 score = 0
 
-with open ("questions.txt" , 'r') as file:
-    questions = file.readlines()
+with open ('questions.txt' , 'r') as file:
+    lines = file.readlines()
+    questions = [line.strip() for line in lines if line.strip()][:10]
 
 random_line_number = randint(0, len(questions) - 1)
 random_question = questions[random_line_number].strip()
