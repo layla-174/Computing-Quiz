@@ -17,7 +17,10 @@ answer = input()
 if answer+"\n" in questions:
     print("that's correct!!")
     score += 1
-else:
+elif answer+"\n" not in questions:
     print("sorry, wrong answer..")
+else:
+    with open ("questions.txt" , 'r') as file:
+        questions = file.readlines()
 
 print(f"your total score is: {score}") 
