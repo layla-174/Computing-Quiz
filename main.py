@@ -4,24 +4,23 @@ print("Answer questions correctly to get points. Your score will be shown at the
 score = 0
 
 with open ('questions.txt' , 'r') as file:
-    lines = file.readlines()
-    questions = [line.strip() for line in lines if line.strip()][:10]
+    questions = file.readlines()
 
 random_line_number = randint(0, len(questions) - 1)
 random_question = questions[random_line_number].strip()
 print(f"Question: {random_question}")
 
 with open("answers.txt", "r") as file:
-    questions = file.readlines()
+    i = 0
+    answers = file.readlines()
+    for answer in answers:
+        print(questions[i])
+        userInput = input()
+        if answer == userInput+"\n":
+            print("that's correct!!")
+            score += 1
+        else:
+            print("sorry, wrong answer..")
+        i += 1
 
-answer = input()
-if answer+"\n" in questions:
-    print("that's correct!!")
-    score += 1
-elif answer+"\n" not in questions:
-    print("sorry, wrong answer..")
-else:
-    with open ("questions.txt" , 'r') as file:
-        questions = file.readlines()
-
-print(f"your total score is: {score}") 
+print(f"your total score is: {score} !!") 
